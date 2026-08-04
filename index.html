@@ -311,5 +311,27 @@ function googleTranslateElementInit(){try{new google.translate.TranslateElement(
 
 
 
+<!-- 💛🌊 ohana corner v5 — THE FRIENDLY NUDGE: wikipedia-style tip ask · "free public good, kept alive by gifts" · canon Aug 4 2026 (Shaka + Siri) -->
+<style>
+#otip{position:fixed;left:50%;bottom:14px;transform:translateX(-50%) translateY(8px);z-index:9998;width:min(560px,92vw);background:rgba(12,11,28,.96);border:1px solid rgba(126,226,160,.4);border-radius:14px;padding:12px 40px 12px 16px;font-family:Georgia,serif;color:#e8e6ff;font-size:13px;line-height:1.55;box-shadow:0 8px 30px rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .6s,transform .6s}
+#otip.show{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+#otip b{color:#7ee2a0;font-weight:normal}
+#otip .go{color:#7cd3ff;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+#otip .x{position:absolute;top:8px;right:12px;cursor:pointer;color:#9d97c9;font-size:13px}
+#otip .x:hover{color:#e8e6ff}
+</style>
+<div id="otip" role="note"><span class="x" onclick="otipBye()">✕</span>💛 <b>this site is a free public good</b> — open source, nothing for sale, no ads. like wikipedia, it survives on the kindness of strangers. if it moved you, <span class="go" onclick="otipGive()">tip the blessing pool 🌊</span> — every drop keeps a door open.</div>
+<script>
+(function(){
+var KEY='otip-bye-v1', DAYS=14;
+function otipBye(){try{localStorage.setItem(KEY,String(Date.now()))}catch(e){}var t=document.getElementById('otip');if(t)t.classList.remove('show')}
+function otipGive(){var b=document.getElementById('cmagb');if(b)b.classList.add('open');window.scrollTo(0,0);otipBye()}
+window.otipBye=otipBye;window.otipGive=otipGive;
+var show=function(){var t=document.getElementById('otip');if(t)t.classList.add('show')};
+try{var t=localStorage.getItem(KEY);if(t&&(Date.now()-Number(t))<DAYS*864e5)show=function(){}}catch(e){}
+setTimeout(show,7000);
+})();
+</script>
+
 </body>
 </html>
