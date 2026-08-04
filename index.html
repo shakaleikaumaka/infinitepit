@@ -311,7 +311,7 @@ function googleTranslateElementInit(){try{new google.translate.TranslateElement(
 
 
 
-<!-- 💛🌊 ohana corner v5 — THE FRIENDLY NUDGE: wikipedia-style tip ask · "free public good, kept alive by gifts" · canon Aug 4 2026 (Shaka + Siri) -->
+<!-- 💛🌊 ohana corner v5.1 — THE FRIENDLY NUDGE + MOBILE ALOHA: desktop = quiet banner · mobile = 3s centered welcome pointing at the 🧲 · canon Aug 4 2026 (Shaka: "big aloha, point to the donation bubbles, disappears automatically") -->
 <style>
 #otip{position:fixed;left:50%;bottom:14px;transform:translateX(-50%) translateY(8px);z-index:9998;width:min(560px,92vw);background:rgba(12,11,28,.96);border:1px solid rgba(126,226,160,.4);border-radius:14px;padding:12px 40px 12px 16px;font-family:Georgia,serif;color:#e8e6ff;font-size:13px;line-height:1.55;box-shadow:0 8px 30px rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .6s,transform .6s}
 #otip.show{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
@@ -319,17 +319,47 @@ function googleTranslateElementInit(){try{new google.translate.TranslateElement(
 #otip .go{color:#7cd3ff;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 #otip .x{position:absolute;top:8px;right:12px;cursor:pointer;color:#9d97c9;font-size:13px}
 #otip .x:hover{color:#e8e6ff}
+/* 📱 mobile: tuck the corner buttons, swap the banner for the aloha window */
+@media (max-width:700px){
+  #oflo,#olang,#oviol{width:38px!important;height:38px!important;font-size:17px!important;opacity:.5!important;animation:none!important}
+  #cmag{width:38px!important;height:38px!important;font-size:13px!important;opacity:.55!important;animation:none!important}
+  #oflo{top:8px!important;left:8px!important}#olang{top:52px!important;left:8px!important}#oviol{top:96px!important;left:8px!important}
+  #cmag{top:8px!important;right:8px!important}
+  #oflop,#olangp{top:140px!important;left:8px!important}
+  #cmagb{top:52px!important;right:8px!important}
+  #otip{display:none!important}
+}
+#aloha{position:fixed;inset:0;z-index:10002;display:none;align-items:center;justify-content:center;background:rgba(7,7,20,.62);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;transition:opacity .45s}
+#aloha.show{opacity:1}
+#aloha .card{text-align:center;padding:0 28px;max-width:340px}
+#aloha .big{font-family:Georgia,serif;font-size:clamp(44px,12vw,64px);letter-spacing:3px;color:#fff;text-shadow:0 0 34px rgba(255,158,198,.75);margin-bottom:10px}
+#aloha .sub{font-family:Georgia,serif;font-size:16px;color:#e8e6ff;line-height:1.7}
+#aloha .ptr{font-family:Georgia,serif;font-size:14px;color:#7ee2a0;line-height:1.7;margin-top:14px}
+#aloha .arr{display:inline-block;font-size:22px;animation:arrUp 1s ease-in-out infinite;color:#7ee2a0}
+@keyframes arrUp{0%,100%{transform:translate(6px,0) rotate(45deg)}50%{transform:translate(6px,-8px) rotate(45deg)}}
 </style>
 <div id="otip" role="note"><span class="x" onclick="otipBye()">✕</span>💛 <b>this site is a free public good</b> — open source, nothing for sale, no ads. like wikipedia, it survives on the kindness of strangers. if it moved you, <span class="go" onclick="otipGive()">tip the blessing pool 🌊</span> — every drop keeps a door open.</div>
+<div id="aloha" onclick="alohaBye()"><div class="card"><div class="big">🌺 aloha!</div><div class="sub">welcome, friend — this place is free forever, nothing for sale, no ads.</div><div class="ptr">the 🧲 up top keeps it glowing — every drop keeps a door open <span class="arr">➤</span></div></div></div>
 <script>
 (function(){
-var KEY='otip-bye-v1', DAYS=14;
+var KEY='otip-bye-v1', DAYS=14, AKEY='aloha-seen-v1';
+function mob(){return window.innerWidth<=700}
 function otipBye(){try{localStorage.setItem(KEY,String(Date.now()))}catch(e){}var t=document.getElementById('otip');if(t)t.classList.remove('show')}
 function otipGive(){var b=document.getElementById('cmagb');if(b)b.classList.add('open');window.scrollTo(0,0);otipBye()}
-window.otipBye=otipBye;window.otipGive=otipGive;
-var show=function(){var t=document.getElementById('otip');if(t)t.classList.add('show')};
-try{var t=localStorage.getItem(KEY);if(t&&(Date.now()-Number(t))<DAYS*864e5)show=function(){}}catch(e){}
-setTimeout(show,7000);
+function alohaBye(){try{sessionStorage.setItem(AKEY,'1')}catch(e){}var a=document.getElementById('aloha');if(a){a.classList.remove('show');setTimeout(function(){a.style.display='none'},500)}}
+window.otipBye=otipBye;window.otipGive=otipGive;window.alohaBye=alohaBye;
+if(mob()){
+  /* 📱 mobile: 3-second centered aloha, once per session, then gone */
+  var seen=false;try{seen=!!sessionStorage.getItem(AKEY)}catch(e){}
+  if(!seen){var a=document.getElementById('aloha');if(a){a.style.display='flex';
+    requestAnimationFrame(function(){requestAnimationFrame(function(){a.classList.add('show')})});
+    setTimeout(alohaBye,3000);}}
+}else{
+  /* 🖥️ desktop: the quiet banner, 14-day memory */
+  var show=function(){var t=document.getElementById('otip');if(t)t.classList.add('show')};
+  try{var t=localStorage.getItem(KEY);if(t&&(Date.now()-Number(t))<DAYS*864e5)show=function(){}}catch(e){}
+  setTimeout(show,7000);
+}
 })();
 </script>
 
