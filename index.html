@@ -311,7 +311,7 @@ function googleTranslateElementInit(){try{new google.translate.TranslateElement(
 
 
 
-<!-- 💛🌊 ohana corner v5.1 — THE FRIENDLY NUDGE + MOBILE ALOHA: desktop = quiet banner · mobile = 3s centered welcome pointing at the 🧲 · canon Aug 4 2026 (Shaka: "big aloha, point to the donation bubbles, disappears automatically") -->
+<!-- 💛🌊 ohana corner v5.2 — THE FRIENDLY NUDGE + MOBILE ALOHA: desktop = quiet banner · mobile = centered aloha with ✕ (no timer), once per session ACROSS doors · canon Aug 4 2026 (Shaka: "big aloha, point to the donation bubbles, disappears automatically") -->
 <style>
 #otip{position:fixed;left:50%;bottom:14px;transform:translateX(-50%) translateY(8px);z-index:9998;width:min(560px,92vw);background:rgba(12,11,28,.96);border:1px solid rgba(126,226,160,.4);border-radius:14px;padding:12px 40px 12px 16px;font-family:Georgia,serif;color:#e8e6ff;font-size:13px;line-height:1.55;box-shadow:0 8px 30px rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .6s,transform .6s}
 #otip.show{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
@@ -339,21 +339,23 @@ function googleTranslateElementInit(){try{new google.translate.TranslateElement(
 @keyframes arrUp{0%,100%{transform:translate(6px,0) rotate(45deg)}50%{transform:translate(6px,-8px) rotate(45deg)}}
 </style>
 <div id="otip" role="note"><span class="x" onclick="otipBye()">✕</span>💛 <b>this site is a free public good</b> — open source, nothing for sale, no ads. like wikipedia, it survives on the kindness of strangers. if it moved you, <span class="go" onclick="otipGive()">tip the blessing pool 🌊</span> — every drop keeps a door open.</div>
-<div id="aloha" onclick="alohaBye()"><div class="card"><div class="big">🌺 aloha!</div><div class="sub">welcome, friend — this place is free forever, nothing for sale, no ads.</div><div class="ptr">the 🧲 up top keeps it glowing — every drop keeps a door open <span class="arr">➤</span></div></div></div>
+<div id="aloha" onclick="alohaBye()"><div class="card" style="position:relative"><span style="position:absolute;top:-14px;right:2px;font-size:26px;color:#fff;opacity:.85;cursor:pointer;padding:10px" aria-label="close">✕</span><div class="big">🌺 aloha!</div><div class="sub">welcome, friend — this place is free forever, nothing for sale, no ads.</div><div class="ptr">the 🧲 up top keeps it glowing — every drop keeps a door open <span class="arr">➤</span></div></div></div>
 <script>
 (function(){
 var KEY='otip-bye-v1', DAYS=14, AKEY='aloha-seen-v1';
 function mob(){return window.innerWidth<=700}
 function otipBye(){try{localStorage.setItem(KEY,String(Date.now()))}catch(e){}var t=document.getElementById('otip');if(t)t.classList.remove('show')}
 function otipGive(){var b=document.getElementById('cmagb');if(b)b.classList.add('open');window.scrollTo(0,0);otipBye()}
-function alohaBye(){try{sessionStorage.setItem(AKEY,'1')}catch(e){}var a=document.getElementById('aloha');if(a){a.classList.remove('show');setTimeout(function(){a.style.display='none'},500)}}
+function alohaBye(){try{sessionStorage.setItem(AKEY,'1')}catch(e){}alohaCarry();var a=document.getElementById('aloha');if(a){a.classList.remove('show');setTimeout(function(){a.style.display='none'},500)}}
 window.otipBye=otipBye;window.otipGive=otipGive;window.alohaBye=alohaBye;
+function alohaCarry(){try{var as=document.querySelectorAll('a.od');for(var i=0;i<as.length;i++){if(as[i].href.indexOf('aloha=')<0)as[i].href+=(as[i].href.indexOf('?')>-1?'&':'?')+'aloha=seen'}}catch(e){}}
 if(mob()){
-  /* 📱 mobile: 3-second centered aloha, once per session, then gone */
+  /* 📱 mobile: centered aloha with ✕, no timer — once per session, and it RIDES the door links so it never re-pops as you wander door to door */
   var seen=false;try{seen=!!sessionStorage.getItem(AKEY)}catch(e){}
-  if(!seen){var a=document.getElementById('aloha');if(a){a.style.display='flex';
-    requestAnimationFrame(function(){requestAnimationFrame(function(){a.classList.add('show')})});
-    setTimeout(alohaBye,3000);}}
+  if(/[?&]aloha=seen/.test(location.search)){seen=true;try{sessionStorage.setItem(AKEY,'1')}catch(e){}}
+  if(seen){alohaCarry()}
+  else{var a=document.getElementById('aloha');if(a){a.style.display='flex';
+    requestAnimationFrame(function(){requestAnimationFrame(function(){a.classList.add('show')})});}}
 }else{
   /* 🖥️ desktop: the quiet banner, 14-day memory */
   var show=function(){var t=document.getElementById('otip');if(t)t.classList.add('show')};
