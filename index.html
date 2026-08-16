@@ -229,14 +229,13 @@
 (function(){
   var TIPS=[
     ['oflo','the ʻohana 🌺 — meet the whole family!'],
-    ['olang','every language 🌐 — on a “Planet We Share As One” 🌍'],
     ['oviol','join the orchestra 🎻 — Devcon open call!'],
     ['cmag','the blessing magnet 🧲 — give & receive 🌊']
   ];
   function anyOpen(){return document.querySelector('#oflop.open,#olangp.open,#cmagb.open');}
-  function bubble(){
+  function bubble(t,dur){
     if(anyOpen()||document.hidden)return;
-    var t=TIPS[Math.floor(Math.random()*TIPS.length)];
+    t=t||TIPS[Math.floor(Math.random()*TIPS.length)];
     var el=document.getElementById(t[0]);if(!el)return;
     var r=el.getBoundingClientRect();
     var b=document.createElement('div');b.className='obub';b.textContent=t[1];
@@ -247,8 +246,8 @@
     document.body.appendChild(b);
     requestAnimationFrame(function(){b.classList.add('show');});
     el.classList.add('oglowing'); /* the tipped button shines */
-    setTimeout(function(){b.classList.remove('show');el.classList.remove('oglowing');},3400);
-    setTimeout(function(){b.remove();},4000);
+    setTimeout(function(){b.classList.remove('show');el.classList.remove('oglowing');},dur||3400);
+    setTimeout(function(){b.remove();},(dur||3400)+600);
   }
   function glowRandom(){ /* sometimes, a quiet glow with no words */
     if(anyOpen()||document.hidden)return;
@@ -268,7 +267,10 @@
     requestAnimationFrame(function(){n.classList.add('fly');});
     setTimeout(function(){n.remove();},2900);
   }
-  setTimeout(bubble,4000);
+  var LANGTIP=['olang','every language 🌐 — on a “Planet We Share As One” 🌍'];
+  var langShown=false;
+  function langOnce(){if(langShown)return;if(anyOpen()||document.hidden){setTimeout(langOnce,4000);return;}langShown=true;bubble(LANGTIP,3000);}
+  setTimeout(langOnce,4000);
   setInterval(bubble,11000);
   setInterval(glowRandom,17000);
   setTimeout(note,2500);
