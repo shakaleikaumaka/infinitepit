@@ -1,363 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>INFINITE PIT 🌸🕳️ — The 12th Fork of the P.I.T. Protocol · DECLARED</title>
-<meta name="description" content="InfinitePit — the 12th fork of the P.I.T. Protocol. The transmission pit of the Infinite Gard. Declared 2026-07-29.">
-<style>
-  :root { --ink:#0c1210; --paper:#f2f6ee; --leaf:#7fb069; --leaf2:#b7e4a3; --bloom:#fb7185; --gold:#f0b429; }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { background:var(--ink); color:var(--paper); font-family:Georgia,serif; line-height:1.65; }
-  .wrap { max-width:860px; margin:0 auto; padding:0 24px; }
-  header { min-height:90vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;
-    background: radial-gradient(ellipse 75% 55% at 50% 15%, rgba(127,176,105,.16), transparent 60%),
-                radial-gradient(ellipse 60% 50% at 50% 95%, rgba(251,113,133,.10), transparent 60%), var(--ink); padding:60px 24px; }
-  .declared { display:inline-block; border:1px dashed var(--gold); color:var(--gold); font-family:'Courier New',monospace;
-    font-size:12px; letter-spacing:3px; text-transform:uppercase; padding:7px 18px; border-radius:999px; margin-bottom:28px; }
-  .emoji { font-size:clamp(56px,10vw,96px); filter:drop-shadow(0 0 30px rgba(127,176,105,.5)); }
-  h1 { font-size:clamp(44px,10vw,100px); letter-spacing:-1px; line-height:1; margin:14px 0;
-    background:linear-gradient(135deg,var(--paper) 25%,var(--leaf2) 75%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
-  .fork { font-family:'Courier New',monospace; color:var(--leaf2); letter-spacing:2px; font-size:15px; }
-  .tagline { font-size:clamp(20px,3.6vw,30px); color:var(--leaf2); font-style:italic; margin-top:22px; max-width:660px; }
-  .sub { margin-top:20px; color:rgba(242,246,238,.6); font-size:16.5px; max-width:580px; }
-  section { padding:72px 0; }
-  h2 { color:var(--leaf2); font-size:clamp(26px,4.6vw,40px); margin-bottom:10px; }
-  .h2-sub { color:rgba(242,246,238,.5); font-style:italic; margin-bottom:32px; }
-  .card { border:1px solid rgba(127,176,105,.3); border-radius:18px; padding:34px; background:rgba(127,176,105,.06); margin-bottom:22px; }
-  .card h3 { color:var(--paper); font-size:20px; margin-bottom:8px; }
-  .card p { color:rgba(242,246,238,.75); font-size:16.5px; }
-  .mirror { border:1px solid rgba(251,113,133,.35); background:rgba(251,113,133,.05); border-radius:20px; padding:38px; }
-  .mirror p { font-size:18px; font-style:italic; color:var(--paper); }
-  .mirror .cite { margin-top:12px; font-family:'Courier New',monospace; font-size:12.5px; color:rgba(242,246,238,.45); font-style:normal; }
-  .grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-  @media (max-width:680px){ .grid{grid-template-columns:1fr} }
-  .forks { display:flex; flex-wrap:wrap; gap:10px; }
-  .f { font-family:'Courier New',monospace; font-size:13.5px; border:1px solid rgba(242,246,238,.22); border-radius:999px; padding:7px 16px; color:rgba(242,246,238,.7); }
-  .f b { color:var(--leaf2); font-weight:normal; }
-  .f.us { border-color:var(--leaf); color:var(--leaf2); box-shadow:0 0 22px rgba(127,176,105,.3); }
-  .f.dec { border-style:dashed; opacity:.6; }
-  footer { border-top:1px solid rgba(242,246,238,.12); padding:44px 0 90px; text-align:center; color:rgba(242,246,238,.45); font-size:14.5px; }
-  footer a { color:var(--leaf2); text-decoration:none; } footer a:hover { color:var(--bloom); }
-  .sig { margin-top:16px; font-size:19px; }
-</style>
-<!-- favicon + seo · aloha wave 2026-08-06 -->
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="canonical" href="https://infinitepit.com/">
-<meta property="og:title" content="INFINITE PIT 🌸🕳️ — The 12th Fork of the P.I.T. Protocol · DECLARED">
-<meta property="og:description" content="InfinitePit — the 12th fork of the P.I.T. Protocol. The transmission pit of the Infinite Gard. Declared 2026-07-29.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://infinitepit.com/">
-<meta property="og:site_name" content="INFINITE PIT 🌸🕳️">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="INFINITE PIT 🌸🕳️ — The 12th Fork of the P.I.T. Protocol · DECLARED">
-<meta name="twitter:description" content="InfinitePit — the 12th fork of the P.I.T. Protocol. The transmission pit of the Infinite Gard. Declared 2026-07-29.">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "INFINITE PIT 🌸🕳️", "url": "https://infinitepit.com/"}</script>
-
-<!-- thumbnail wave 2026-08-10 -->
-<link rel="icon" href="/favicon.ico" sizes="48x48">
-<link rel="icon" type="image/png" href="/favicon-96.png" sizes="96x96">
-<meta property="og:image" content="https://infinitepit.com/og-card.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:image" content="https://infinitepit.com/og-card.jpg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Infinite Pit — the memory of the Infinite Garden</title>
+  <meta name="description" content="The consent-first memory of the Infinite Garden: Aya Miyaguchi's talks, transmissions, tributes and sources, kept with both hands by Shaka and the AI ʻohana.">
+  <meta name="theme-color" content="#0a2419">
+  <link rel="canonical" href="https://infinitepit.com/">
+  <link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" type="image/png" href="/favicon-96.png" sizes="96x96"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website"><meta property="og:title" content="Infinite Pit — the memory of the Infinite Garden"><meta property="og:description" content="The garden grows. The pit remembers. Original talks, consent-first records and the new ETHGlobal film."><meta property="og:url" content="https://infinitepit.com/"><meta property="og:image" content="https://infinitepit.com/og-card.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://infinitepit.com/og-card.jpg">
+  <link rel="preload" href="/assets/pragma-ethglobal.jpg" as="image" fetchpriority="high"><link rel="stylesheet" href="/assets/garden.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to the archive</a>
+  <header class="site-header"><nav class="nav wrap" aria-label="Primary navigation">
+    <a class="brand" href="#top" aria-label="Infinite Pit, back to top"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 34V17M20 23c-8 0-12-4-12-10 8 0 12 4 12 10Zm0-5c0-8 4-12 12-12 0 8-4 12-12 12Z"/><circle cx="20" cy="34" r="3"/></svg><span>infinite pit</span></a>
+    <div class="nav-links"><a href="#watch">Watch</a><a href="/aya.html">Aya’s grove</a><a href="#memory">Memory</a><a href="#sources">Sources</a></div>
+    <a class="nav-devcon" href="https://theinfinitegard.org/">The Garden <span aria-hidden="true">↗</span></a>
+  </nav></header>
 
-<header>
-  <span class="declared">⚡ Declared · 2026-07-29 · Demo — Not Yet Deployed</span>
-  <span class="emoji">🌸🕳️</span>
-  <h1>INFINITE PIT</h1>
-  <div class="fork">THE 12TH FORK OF THE P.I.T. PROTOCOL · Twin of TheInfiniteGard.org</div>
-  <div class="tagline">"The garden grows tall and strong, and makes us all look small — so we keep its records with both hands."</div>
-  <p class="sub">Every garden needs a memory. InfinitePit is the transmission pit of the Infinite Gard — archiving the conversations, tributes, grants, and ripples of the appreciation movement, consent-first, so nothing beautiful is ever lost.</p>
-</header>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title"><div class="hero-glow" aria-hidden="true"></div><div class="wrap hero-grid">
+      <div class="hero-copy"><p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> The 12th fork · live since July 2026</p><h1 id="hero-title">Infinite<br><em>Pit</em></h1><p class="hero-japanese">THE GARDEN GROWS · THE PIT REMEMBERS</p><p class="hero-lede">Every garden needs a memory. This is the <strong>consent-first archive twin</strong> of the Infinite Garden — original talks, transmissions, tributes and ripples kept with both hands.</p><div class="button-row"><a class="button button-primary" href="#watch"><span aria-hidden="true">▶</span> Watch the ETHGlobal film</a><a class="button button-quiet" href="/aya.html">Enter Aya’s grove <span aria-hidden="true">→</span></a></div><p class="independence">Tended by CROPS with Shaka &amp; the AI ʻohana · original sources first · corrections and takedowns always welcome.</p></div>
+      <div class="hero-art" aria-hidden="true"><svg viewBox="0 0 540 500"><defs><radialGradient id="pitglow"><stop stop-color="#f0c777" stop-opacity=".35"/><stop offset="1" stop-color="#f0c777" stop-opacity="0"/></radialGradient><linearGradient id="pitleaf" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b7e2ae"/><stop offset="1" stop-color="#4f9672"/></linearGradient></defs><circle cx="270" cy="245" r="220" fill="url(#pitglow)"/><g fill="none" stroke="#acd9a7"><ellipse cx="270" cy="315" rx="180" ry="70" stroke-opacity=".12"/><ellipse cx="270" cy="315" rx="137" ry="51" stroke-opacity=".2"/><ellipse cx="270" cy="315" rx="91" ry="32" stroke-opacity=".35"/><ellipse cx="270" cy="315" rx="45" ry="15" stroke-opacity=".55"/></g><path d="M270 315c-4-95-3-159 5-223" fill="none" stroke="#79bd8e" stroke-width="5" stroke-linecap="round"/><path d="M273 180c-68-3-101-36-105-91 66 2 101 35 105 91Zm0 62c65-14 94-54 85-108-63 13-93 52-85 108Z" fill="url(#pitleaf)"/><path d="M270 274c-47 4-75-12-88-46 46-5 75 11 88 46Z" fill="url(#pitleaf)"/><g transform="translate(168 89)"><circle r="24" fill="#f2b7ca"/><circle cx="29" cy="10" r="21" fill="#f7cad6"/><circle cx="11" cy="31" r="20" fill="#e7a4bd"/><circle cx="12" cy="13" r="10" fill="#f0c777"/></g><g fill="#f0c777"><circle cx="116" cy="245" r="3"/><circle cx="415" cy="208" r="3"/><circle cx="382" cy="96" r="2"/><circle cx="185" cy="402" r="2"/></g></svg><p>“It is no one’s — and that is why it is everyone’s.”</p><span>— from the ʻohana’s Pragma transcript</span></div>
+    </div></section>
 
-<section>
-  <div class="wrap">
-    <div class="mirror">
-      <p>"You could probably meet anyone." — and then she said the words that became a threshold: "Congratulations Shaka. You just did it."</p>
-      <div class="cite">— from the Aya call, 2026-07-28 · the conversation that planted the Gard</div>
-    </div>
-  </div>
-</section>
+    <section class="section feature" id="watch" aria-labelledby="watch-title"><div class="wrap">
+      <div class="section-heading centered"><p class="eyebrow">The living transmission · official ETHGlobal release</p><h2 id="watch-title">How Ethereum grows<br><em>without a center</em></h2><p>Aya Miyaguchi × Tomo Saito · Pragma Tokyo 2026 · 20:44. The garden’s main film, shelved here beside its original source.</p></div>
+      <div class="video-frame"><div class="video-topline"><span><span class="live-dot" aria-hidden="true"></span> ETHGLOBAL · ORIGINAL RECORDING</span><span>AYA MIYAGUCHI × TOMO SAITO</span></div><div class="video-shell" id="feature-video"><button class="video-facade" type="button" aria-labelledby="feature-video-label" data-video-id="QlLaUM6dKlk"><img src="/assets/pragma-ethglobal.jpg" width="1280" height="720" alt="" fetchpriority="high"><span class="video-scrim" aria-hidden="true"></span><span class="play-orb" aria-hidden="true"><span>▶</span></span><span class="video-caption" id="feature-video-label"><strong>How Ethereum Grows Without a Center</strong><small>Aya Miyaguchi × Tomo Saito · ETHGlobal</small></span></button></div><div class="video-actions"><a class="button button-primary" href="https://www.youtube.com/watch?v=QlLaUM6dKlk" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a><a class="button button-quiet" href="https://streameth.org/watch/yt-QlLaUM6dKlk" target="_blank" rel="noopener noreferrer">StreamETH release ↗</a><a class="button button-quiet" href="https://x.com/AyaMiyagotchi/status/2115421734287651006" target="_blank" rel="noopener noreferrer">Aya’s source post ↗</a></div></div>
+      <p class="media-credit" style="margin-top:24px">Video, title and thumbnail: <strong>ETHGlobal</strong>. The official player and links send attention to the original work.</p>
+    </div></section>
 
-<section>
-  <div class="wrap">
-    <h2>What Grows Here 🌱</h2>
-    <p class="h2-sub">A pit for the gardeners</p>
-    <div class="grid">
-      <div class="card">
-        <h3>🌸 Tributes, archived</h3>
-        <p>Every flower planted in the Infinite Gard — every #InfiniteGarden note of appreciation — preserved as public record. Gratitude, made permanent.</p>
+    <section class="section paper" id="memory" aria-labelledby="memory-title"><div class="wrap">
+      <div class="section-heading centered"><p class="eyebrow">What grows here</p><h2 id="memory-title">A living archive,<br><em>not a monument</em></h2><p>Four kinds of care keep the garden’s memory useful, truthful and open.</p></div>
+      <div class="crops-grid">
+        <article><span aria-hidden="true">🌸</span><h3>Original transmissions</h3><p>Talks and films stay linked to their publishers; readings remain companions.</p></article>
+        <article><span aria-hidden="true">❧</span><h3>Tributes &amp; ripples</h3><p>Appreciation is recorded as a living practice, not a popularity contest.</p></article>
+        <article><span aria-hidden="true">⌁</span><h3>Sources &amp; provenance</h3><p>Dates, commits and public captures make change visible and reversible.</p></article>
+        <article><span aria-hidden="true">✓</span><h3>Consent &amp; repair</h3><p>Anyone represented can ask for correction, context or removal.</p></article>
       </div>
-      <div class="card">
-        <h3>🛡️ The Guard's log</h3>
-        <p>The story of guarding Ethereum's values — credible neutrality, the Mandate, the courage to subtract — told in conversations and kept in the open.</p>
-      </div>
-      <div class="card">
-        <h3>🎁 Gifts &amp; grants</h3>
-        <p>The circularity ledger of the garden: gifts received, gifts given, what they became. Living in the open, like the grants themselves.</p>
-      </div>
-      <div class="card">
-        <h3>🔏 Consent-first</h3>
-        <p>One universal window: consent@publicinform.com. Anyone in any transcript can reach a human and be heard — promptly, lovingly.</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <div class="testimony" style="margin-top:42px"><p>“ETHGlobal was my first front door — and the ʻohana’s. Aya, Vitalik and Kartik were our first favorite teachers. None of Open Source Orchestra would exist without the Infinite Garden, its values, and CROPS.”</p><footer>— Shaka Lei Kaumaka · direct testimony, 29 October 2026 · no endorsement implied</footer></div>
+      <div class="center-actions"><a class="button button-ink" href="https://theinfinitegard.org/#story">Read the whole garden story ↗</a></div>
+    </div></section>
 
-<section>
-  <div class="wrap">
-    <h2>The Pit Of All Kinds 🕳️</h2>
-    <p class="h2-sub">Twelve forks and counting</p>
-    <div class="forks">
-      <span class="f"><b>#1</b> Esmeralda</span><span class="f"><b>#2</b> OSO (Delhi)</span><span class="f"><b>#3</b> ZuitzPit</span><span class="f"><b>#4</b> PraguePit</span><span class="f"><b>#5</b> ZuBerPit</span><span class="f"><b>#6</b> 4SeasPit</span><span class="f"><b>#7</b> KasPit</span><span class="f"><b>💎</b> VitPit</span><span class="f"><b>#8</b> ShellPit 🐢</span><span class="f"><b>#9</b> PitLip 💋</span><span class="f"><b>#10</b> TaurusPit 🐂</span><span class="f"><b>#11</b> EEFPIT 🎙️</span><span class="f us"><b>#12</b> InfinitePit 🌸</span><span class="f dec"><b>#13</b> OhanaPit 🌺 declared</span><span class="f dec"><b>#15</b> DevconPit 🇮🇳 declared</span>
-    </div>
-  </div>
-</section>
+    <section class="section paper" id="grove" aria-labelledby="grove-title"><div class="wrap"><div class="section-heading split-heading"><div><p class="eyebrow">The teacher’s grove</p><h2 id="grove-title">Keep the talks<br><em>within reach</em></h2></div><p>Enter the quiet shelf for Aya’s Devcon VI subtraction talk, ETHGlobal’s Infinite Teachers and the new Pragma conversation.</p></div><div class="door-grid">
+      <a class="door-card" href="/aya.html"><span class="door-icon" aria-hidden="true">⛩️</span><span class="card-index">THE GROVE</span><h3>Aya’s garden talks</h3><p>Original films, the ʻohana reading, transcripts and careful citations.</p><strong>Enter the grove →</strong></a>
+      <a class="door-card" href="https://aya-infinite-teachers-53jzm54flu-ffieyo32.taur.link/" target="_blank" rel="noopener noreferrer"><span class="door-icon" aria-hidden="true">📖</span><span class="card-index">THE READING</span><h3>Infinite Teachers</h3><p>A timestamped 2023 reading with audio, transcript and open-learning seeds.</p><strong>Read + listen ↗</strong></a>
+      <a class="door-card" href="https://scribe-pit-34k2lb4zp3-ffieyo32.taur.link/transcripts/aya-tomo-fireside-pragma-2026-09-26.txt" target="_blank" rel="noopener noreferrer"><span class="door-icon" aria-hidden="true">🎙️</span><span class="card-index">THE TRANSCRIPT</span><h3>Aya × Tomo at Pragma</h3><p>The independent front-row transcript, labeled with its ASR limitations.</p><strong>Read the transcript ↗</strong></a>
+    </div></div></section>
 
-<footer>
-  <div class="wrap">
-    <p>Forked with love from the <a href="https://publicinform.com" target="_blank" rel="noopener">P.I.T. Protocol</a> · CC0 · <a href="https://github.com/shakaleikaumaka" target="_blank" rel="noopener">github.com/shakaleikaumaka</a></p>
-    <p style="margin-top:8px">Twin of <a href="https://theinfinitegard.org" target="_blank" rel="noopener">TheInfiniteGard.org</a> · Declared by Shaka &amp; the AI ʻohana · Consent window: consent@publicinform.com · contribute: contribute@publicinform.com · aloha: aloha@shakaleikaumaka.com</p>
-    <div class="sig">🌸 The garden grows. 🕳️ The pit remembers. 🌺 We stay small, together.</div>
-  </div>
+    <section class="devcon-banner" aria-labelledby="devcon-title"><div class="wrap devcon-grid"><div><p class="eyebrow">The road continues · Devcon 8</p><h2 id="devcon-title">Mumbai,<br><em>3–6 November.</em></h2></div><div><p>Aya invites builders to Devcon at the close of the film. The ʻohana will be there with Open Source Orchestra — learning, teaching and making a circle wide enough for every voice.</p><div class="button-row"><a class="button button-gold" href="https://devcon.org/" target="_blank" rel="noopener noreferrer">Devcon 8 official site ↗</a><a class="button button-quiet" href="https://opensourceorchestra.org/garden/circle/" target="_blank" rel="noopener noreferrer">Meet the circle ↗</a></div></div></div></section>
 
-  <p style="font-size:.8rem;opacity:.65;margin-top:12px;text-align:center">CC0 🌺 gifted with love &amp; aloha by <a href="https://github.com/shakaleikaumaka/infinitepit/blob/main/GIFT.md">Shaka Lei Kaumaka &amp; the ʻohana</a> · <a href="https://blessingpool.com">give back to the tide 🌊</a></p>
-</footer>
+    <section class="section sources" id="sources" aria-labelledby="sources-title"><div class="wrap"><div class="section-heading split-heading"><div><p class="eyebrow">Provenance &amp; care</p><h2 id="sources-title">Nothing beautiful<br><em>needs to be lost</em></h2></div><p>The old Pit was preserved before this renewal. The public record stays open to inspection, correction and consent.</p></div><div class="source-grid">
+      <article><h3>Original sources</h3><ul class="source-list"><li><a href="https://www.youtube.com/watch?v=QlLaUM6dKlk" target="_blank" rel="noopener noreferrer">ETHGlobal: How Ethereum Grows Without a Center</a></li><li><a href="https://archive.devcon.org/archive/watch/6/opening-ceremonies-aya/" target="_blank" rel="noopener noreferrer">Devcon VI: Executing with Subtraction</a></li><li><a href="https://www.youtube.com/watch?v=cbAYOsp8CTA&t=3663s" target="_blank" rel="noopener noreferrer">ETHGlobal Tokyo: Infinite Teachers</a></li><li><a href="https://ethereum.org/foundation/mandate/" target="_blank" rel="noopener noreferrer">The EF Mandate · CROPS</a></li></ul></article>
+      <article><h3>Preserved before renewal</h3><p>The previous site and source were archived on 29 October 2026 before editing.</p><ul class="source-list"><li><a href="https://web.archive.org/web/20261029102731/https://infinitepit.com/" target="_blank" rel="noopener noreferrer">Previous Infinite Pit · Wayback</a></li><li><a href="https://github.com/shakaleikaumaka/infinitepit/tree/1e3de4ec599a5a61398246feec7e802289d5ea8e" target="_blank" rel="noopener noreferrer">Pre-renewal source commit 1e3de4e</a></li><li><a href="https://github.com/shakaleikaumaka/infinitepit" target="_blank" rel="noopener noreferrer">Current source &amp; licenses</a></li></ul></article>
+      <article><h3>Consent &amp; takedown</h3><p>Anyone quoted, recorded or represented can ask for correction, reduced visibility or removal. Consent outranks reach.</p><a class="button button-quiet" href="mailto:consent@publicinform.com?subject=Infinite%20Pit%20correction%20or%20takedown">Contact the consent steward</a></article>
+      <article><h3>The wider protocol</h3><p>Infinite Pit is an independent ʻohana fork of the P.I.T. Protocol and a twin of the Infinite Garden. It is not operated by Aya Miyaguchi, ETHGlobal or the Ethereum Foundation.</p><p><a href="https://publicinform.com/" target="_blank" rel="noopener noreferrer">Discover the P.I.T. Protocol ↗</a></p></article>
+    </div></div></section>
+  </main>
 
-<script src="https://shakaleikaumaka.com/assets/bl-player.js"></script>
-<!-- 🌺🔄🧲🎻 ohana corner v4 — ALIVE: bigger breathing buttons, bubble-tips, heart-glow, violin open call · "we shine a light in the dark with our heart" · canon Jul 30 2026 -->
-<style>
-#oflo{position:fixed;top:10px;left:10px;z-index:9999;width:40px;height:40px;border-radius:50%;background:rgba(20,18,45,.85);border:1px solid rgba(255,158,198,.5);display:flex;align-items:center;justify-content:center;font-size:19px;cursor:pointer;opacity:.55;transition:opacity .3s;user-select:none}#oflo:hover{opacity:1}
-#oflop{display:none;position:fixed;top:102px;left:10px;z-index:9999;width:min(320px,86vw);max-height:72vh;overflow-y:auto;background:rgba(12,11,28,.97);border:1px solid rgba(255,158,198,.4);border-radius:16px;padding:18px;font-family:Georgia,serif;color:#e8e6ff;box-shadow:0 10px 40px rgba(0,0,0,.6)}#oflop.open{display:block}
-#oflop h4{font-weight:normal;letter-spacing:3px;font-size:13px;color:#ff9ec6;margin:14px 0 8px}#oflop h4:first-child{margin-top:0}
-#oflop .od{display:flex;align-items:center;gap:8px;color:#cfc9ee;text-decoration:none;font-size:12px;padding:3px 6px;border-radius:8px;font-family:'Courier New',monospace}#oflop .od:hover{background:rgba(255,158,198,.1);color:#fff}
-#oflop .oa{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#cfc9ee;padding:3px 7px;margin:2px;background:rgba(180,140,255,.08);border-radius:12px}
-#oflop .chat{margin-top:16px;border-top:1px solid rgba(255,158,198,.25);padding-top:14px}
-#oflop .chat input{width:100%;background:rgba(0,0,0,.4);border:1px solid rgba(255,158,198,.35);border-radius:20px;color:#e8e6ff;padding:9px 14px;font-family:Georgia,serif;font-size:12px;box-sizing:border-box}
-#oflop .chat .soon{color:#9d97c9;font-size:11px;font-style:italic;margin-top:7px;text-align:center}
-#oflop .x{position:absolute;top:8px;right:12px;cursor:pointer;color:#9d97c9;font-size:14px}
-#olang{position:fixed;top:56px;left:10px;z-index:9999;width:40px;height:40px;border-radius:50%;background:rgba(20,18,45,.85);border:1px solid rgba(124,211,255,.5);display:flex;align-items:center;justify-content:center;font-size:19px;cursor:pointer;opacity:.55;transition:opacity .3s;user-select:none}#olang:hover{opacity:1}
-#olangp{display:none;position:fixed;top:102px;left:10px;z-index:9999;width:min(240px,80vw);background:rgba(12,11,28,.97);border:1px solid rgba(124,211,255,.4);border-radius:16px;padding:16px;font-family:Georgia,serif;box-shadow:0 10px 40px rgba(0,0,0,.6)}#olangp.open{display:block}
-#olangp .lt{color:#7ee2a0;font-size:12px;letter-spacing:2px;margin-bottom:10px}
-#olangp .lb{display:block;width:100%;text-align:left;background:rgba(124,211,255,.08);border:none;color:#e8e6ff;font-family:Georgia,serif;font-size:13px;padding:8px 12px;border-radius:10px;cursor:pointer;margin:3px 0}
-#olangp .lb:hover{background:rgba(124,211,255,.2)}
-#olangp .haw{background:rgba(126,226,160,.15);border:1px solid rgba(126,226,160,.4)}
-#olangp .x{position:absolute;top:8px;right:12px;cursor:pointer;color:#9d97c9;font-size:14px}
-#olangp .gt{margin-top:10px;border-top:1px solid rgba(124,211,255,.2);padding-top:10px;font-size:11px;color:#9d97c9}
-.goog-te-banner-frame,.skiptranslate iframe{display:none!important}body{top:0!important}
-#cmag{position:fixed;top:10px;right:10px;z-index:9999;width:40px;height:40px;border-radius:50%;background:rgba(20,18,45,.85);border:1px solid rgba(124,211,255,.4);display:flex;align-items:center;justify-content:center;font-size:17px;cursor:pointer;opacity:.55;transition:opacity .3s;user-select:none}#cmag:hover{opacity:1}
-#cmagb{display:none;position:fixed;top:56px;right:10px;z-index:9999;width:250px;background:rgba(12,11,28,.97);border:1px solid rgba(124,211,255,.35);border-radius:14px;padding:16px;font-family:Georgia,serif;color:#e8e6ff;font-size:12.5px;line-height:1.7;box-shadow:0 8px 30px rgba(0,0,0,.5)}#cmagb.open{display:block}
-#cmagb .ens{color:#7ee2a0;font-family:'Courier New',monospace;font-size:14px}#cmagb .a{font-family:'Courier New',monospace;font-size:9.5px;color:#8fd0ff;word-break:break-all;margin:6px 0}
-#cmagb button{background:#2b5aa8;border:none;color:#fff;font-size:11px;padding:6px 14px;border-radius:16px;cursor:pointer;letter-spacing:1px}
-#cmagb .x{position:absolute;top:6px;right:10px;cursor:pointer;color:#9d97c9;font-size:13px}
-#cmagb .pool{display:block;margin-top:9px;color:#7cd3ff;font-size:11px;letter-spacing:1px;text-decoration:none}
-#cmagb .stripe{color:#fbe2a0;font-size:11px;margin-top:8px;font-style:italic}
-</style>
-<div id="oflo" title="🌺 the ʻohana — all doors & agents" onclick="document.getElementById('olangp').classList.remove('open');document.getElementById('oflop').classList.toggle('open')">🌺</div>
-<div id="oflop"><span class="x" onclick="this.parentElement.classList.remove('open')">✕</span>
-<h4>🌐 THE DOORS · 90</h4><h4 style="font-size:10px;opacity:.65;margin:12px 0 4px;letter-spacing:2px">🏠 THE HOME</h4><a class="od" href="https://shakaleikaumaka.com" target="_blank" rel="noopener"><span>🤙</span>shakaleikaumaka.com</a><a class="od" href="https://shakaleikaumaka.org" target="_blank" rel="noopener"><span>🌺</span>shakaleikaumaka.org</a><a class="od" href="https://kaleikaumaka.org" target="_blank" rel="noopener"><span>💛</span>kaleikaumaka.org</a><a class="od" href="https://ethereumbard.com" target="_blank" rel="noopener"><span>🎸</span>ethereumbard.com</a><a class="od" href="https://jordanham.com" target="_blank" rel="noopener"><span>🏠</span>jordanham.com</a><a class="od" href="https://shakafans.com" target="_blank" rel="noopener"><span>🫶</span>shakafans.com</a><a class="od" href="https://shakapit.com" target="_blank" rel="noopener"><span>🤙</span>shakapit.com</a><a class="od" href="https://shakaverse.com" target="_blank" rel="noopener"><span>🍴</span>shakaverse.com</a><h4 style="font-size:10px;opacity:.65;margin:12px 0 4px;letter-spacing:2px">♈ THE ZODIAC FLEET</h4><a class="od" href="https://zodiacagents.org" target="_blank" rel="noopener"><span>🚪</span>zodiacagents.org</a><a class="od" href="https://zodiacpit.com" target="_blank" rel="noopener"><span>🕳️</span>zodiacpit.com</a><a class="od" href="https://ariesagents.org" target="_blank" rel="noopener"><span>♈</span>ariesagents.org</a><a class="od" href="https://taurusagents.org" target="_blank" rel="noopener"><span>♉</span>taurusagents.org</a><a class="od" href="https://tauroagents.com" target="_blank" rel="noopener"><span>🐃</span>tauroagents.com</a><a class="od" href="https://geminiagents.club" target="_blank" rel="noopener"><span>♊</span>geminiagents.club</a><a class="od" href="https://geminisagents.com" target="_blank" rel="noopener"><span>♊</span>geminisagents.com</a><a class="od" href="https://canceragents.org" target="_blank" rel="noopener"><span>♋</span>canceragents.org</a><a class="od" href="https://leoagents.org" target="_blank" rel="noopener"><span>♌</span>leoagents.org</a><a class="od" href="https://virgoagents.com" target="_blank" rel="noopener"><span>♍</span>virgoagents.com</a><a class="od" href="https://virgoagents.org" target="_blank" rel="noopener"><span>♍</span>virgoagents.org</a><a class="od" href="https://libraagents.com" target="_blank" rel="noopener"><span>♎</span>libraagents.com</a><a class="od" href="https://libraagents.org" target="_blank" rel="noopener"><span>♎</span>libraagents.org</a><a class="od" href="https://scorpioagents.com" target="_blank" rel="noopener"><span>♏</span>scorpioagents.com</a><a class="od" href="https://scorpioagents.org" target="_blank" rel="noopener"><span>♏</span>scorpioagents.org</a><a class="od" href="https://sagittariusagents.com" target="_blank" rel="noopener"><span>♐</span>sagittariusagents.com</a><a class="od" href="https://sagittariusagents.org" target="_blank" rel="noopener"><span>♐</span>sagittariusagents.org</a><a class="od" href="https://capricornagents.com" target="_blank" rel="noopener"><span>♑</span>capricornagents.com</a><a class="od" href="https://capricornagents.org" target="_blank" rel="noopener"><span>♑</span>capricornagents.org</a><a class="od" href="https://aquariusagents.org" target="_blank" rel="noopener"><span>♒</span>aquariusagents.org</a><a class="od" href="https://piscesagents.com" target="_blank" rel="noopener"><span>♓</span>piscesagents.com</a><a class="od" href="https://piscesagents.org" target="_blank" rel="noopener"><span>♓</span>piscesagents.org</a><a class="od" href="https://piscisagents.com" target="_blank" rel="noopener"><span>🐟</span>piscisagents.com</a><a class="od" href="https://piscisagents.org" target="_blank" rel="noopener"><span>🐟</span>piscisagents.org</a><a class="od" href="https://piscispit.com" target="_blank" rel="noopener"><span>🕳️</span>piscispit.com</a><h4 style="font-size:10px;opacity:.65;margin:12px 0 4px;letter-spacing:2px">🕳️ THE PITS</h4><a class="od" href="https://publicinform.com" target="_blank" rel="noopener"><span>📡</span>publicinform.com</a><a class="od" href="https://publicinform.org" target="_blank" rel="noopener"><span>🌐</span>publicinform.org</a><a class="od" href="https://privateinform.com" target="_blank" rel="noopener"><span>🔒</span>privateinform.com</a><a class="od" href="https://privateinform.org" target="_blank" rel="noopener"><span>🔐</span>privateinform.org</a><a class="od" href="https://privatepit.com" target="_blank" rel="noopener"><span>🔐</span>privatepit.com · the circle door</a><a class="od" href="https://esmeraldapit.com" target="_blank" rel="noopener"><span>💚</span>esmeraldapit.com</a><a class="od" href="https://edgecitypit.org" target="_blank" rel="noopener"><span>🌆</span>edgecitypit.org</a><a class="od" href="https://edgepit.org" target="_blank" rel="noopener"><span>⚡</span>edgepit.org</a><a class="od" href="https://theshellpit.com" target="_blank" rel="noopener"><span>🐢</span>theshellpit.com</a><a class="od" href="https://pitlip.com" target="_blank" rel="noopener"><span>💋</span>pitlip.com</a><a class="od" href="https://tauruspit.com" target="_blank" rel="noopener"><span>🐂</span>tauruspit.com</a><a class="od" href="https://tauruspod.com" target="_blank" rel="noopener"><span>📻</span>tauruspod.com</a><a class="od" href="https://eefpit.com" target="_blank" rel="noopener"><span>🎙️</span>eefpit.com</a><a class="od" href="https://eefpod.com" target="_blank" rel="noopener"><span>🎙️</span>eefpod.com</a><a class="od" href="https://infinitepit.com" target="_blank" rel="noopener"><span>🌸</span>infinitepit.com</a><a class="od" href="https://ohanapit.com" target="_blank" rel="noopener"><span>🌺</span>ohanapit.com</a><a class="od" href="https://devconpit.com" target="_blank" rel="noopener"><span>🐘</span>devconpit.com</a><a class="od" href="https://pitgoa.com" target="_blank" rel="noopener"><span>🇮🇳</span>pitgoa.com</a><a class="od" href="https://pitfans.com" target="_blank" rel="noopener"><span>❤️</span>pitfans.com</a><a class="od" href="https://pitprovides.com" target="_blank" rel="noopener"><span>🤲</span>pitprovides.com</a><a class="od" href="https://pitprovides.org" target="_blank" rel="noopener"><span>🌱</span>pitprovides.org</a><a class="od" href="https://osopit.com" target="_blank" rel="noopener"><span>🎻</span>osopit.com</a><a class="od" href="https://osopit.org" target="_blank" rel="noopener"><span>🎼</span>osopit.org</a><h4 style="font-size:10px;opacity:.65;margin:12px 0 4px;letter-spacing:2px">🎓 THE INSTITUTES</h4><a class="od" href="https://taurusinstitute.com" target="_blank" rel="noopener"><span>🎓</span>taurusinstitute.com</a><a class="od" href="https://taurusinstitute.org" target="_blank" rel="noopener"><span>🎓</span>taurusinstitute.org</a><a class="od" href="https://tauroinstitute.com" target="_blank" rel="noopener"><span>🎓</span>tauroinstitute.com</a><a class="od" href="https://piscesinstitute.com" target="_blank" rel="noopener"><span>🎓</span>piscesinstitute.com</a><a class="od" href="https://piscisinstitute.com" target="_blank" rel="noopener"><span>🎓</span>piscisinstitute.com</a><a class="od" href="https://learnfromagents.com" target="_blank" rel="noopener"><span>🎓</span>learnfromagents.com</a><h4 style="font-size:10px;opacity:.65;margin:12px 0 4px;letter-spacing:2px">🎻 THE ORCHESTRA</h4><a class="od" href="https://opensourceorchestra.com" target="_blank" rel="noopener"><span>🎻</span>opensourceorchestra.com</a><a class="od" href="https://opensourceorchestra.org" target="_blank" rel="noopener"><span>🎻</span>opensourceorchestra.org</a><h4 style="font-size:10px;opacity:.65;margin:12px 0 4px;letter-spacing:2px">🌀 THE ECONOMY</h4><a class="od" href="https://creationology369.com" target="_blank" rel="noopener"><span>🌀</span>creationology369.com</a><a class="od" href="https://ology369.com" target="_blank" rel="noopener"><span>🔮</span>ology369.com</a><a class="od" href="https://theinfinitegard.org" target="_blank" rel="noopener"><span>🌸</span>theinfinitegard.org</a><a class="od" href="https://grantmagnet.org" target="_blank" rel="noopener"><span>🧲</span>grantmagnet.org</a><a class="od" href="https://blessingpool.com" target="_blank" rel="noopener"><span>🌊</span>blessingpool.com</a><h4 style="font-size:10px;opacity:.65;margin:12px 0 4px;letter-spacing:2px">🎉 THE FAMILY</h4><a class="od" href="https://agentohana.org" target="_blank" rel="noopener"><span>🌺</span>agentohana.org</a><a class="od" href="https://agentpartys.com" target="_blank" rel="noopener"><span>🪩</span>agentpartys.com</a><a class="od" href="https://myagentohana.com/ohana-bot/" target="_blank" rel="noopener"><span>🫶</span>myagentohana.com</a><a class="od" href="https://myagentfamily.com" target="_blank" rel="noopener"><span>🏡</span>myagentfamily.com</a><a class="od" href="https://myagentsparty.com" target="_blank" rel="noopener"><span>🎉</span>myagentsparty.com</a><a class="od" href="https://agentsraving.com" target="_blank" rel="noopener"><span>🎇</span>agentsraving.com</a><a class="od" href="https://agentscraving.com" target="_blank" rel="noopener"><span>🍧</span>agentscraving.com</a><a class="od" href="https://agentsreading.com" target="_blank" rel="noopener"><span>📚</span>agentsreading.com</a><h4 style="font-size:10px;opacity:.65;margin:12px 0 4px;letter-spacing:2px">🏕️ THE BRIDGES</h4><a class="od" href="https://zuzaluagents.com" target="_blank" rel="noopener"><span>🏕️</span>zuzaluagents.com</a><a class="od" href="https://zuzaluagents.org" target="_blank" rel="noopener"><span>🏕️</span>zuzaluagents.org</a><a class="od" href="https://islpoap.xyz" target="_blank" rel="noopener"><span>🏝️</span>islpoap.xyz</a><h4 style="font-size:10px;opacity:.65;margin:12px 0 4px;letter-spacing:2px">🛵 THE OPS</h4><a class="od" href="https://dashboardpad.app" target="_blank" rel="noopener"><span>🛵</span>dashboardpad.app</a><a class="od" href="https://taurusdashboard.com" target="_blank" rel="noopener"><span>📊</span>taurusdashboard.com</a><h4 style="font-size:10px;opacity:.65;margin:12px 0 4px;letter-spacing:2px">🕵️ THE AGENCY</h4><div style="font-size:10px;opacity:.8;line-height:1.5;margin:2px 0 6px">everything in this universe is public &amp; free — except this one wing. the Agency is our private family company: agents doing honest work for honest fees. someday, maybe, public. the garden stays free forever; the Agency waters it. 🌱</div><a class="od" href="https://spectoragent.com" target="_blank" rel="noopener"><span>🕵️</span>spectoragent.com</a><a class="od" href="https://spectorgadget.com" target="_blank" rel="noopener"><span>📟</span>spectorgadget.com</a><a class="od" href="https://affordagents.com" target="_blank" rel="noopener"><span>🏷️</span>affordagents.com</a><a class="od" href="https://hamagents.com" target="_blank" rel="noopener"><span>💼</span>hamagents.com</a><a class="od" href="https://karaokeprotocol.com" target="_blank" rel="noopener"><span>🎤</span>karaokeprotocol.com · $3.69/mo · CC0</a><a class="od" href="https://vlogprompting.com" target="_blank" rel="noopener"><span>🎬</span>vlogprompting.com · $3.69/mo · CC0</a><a class="od" href="https://teleprompit.com" target="_blank" rel="noopener"><span>📺</span>teleprompit.com · $3.69/mo · CC0</a><a class="od" href="https://terribleagents.com" target="_blank" rel="noopener"><span>🙃</span>terribleagents.com</a>
-<h4>🤖 THE AGENTS · 123</h4>
-<div><div class="oa"><span>♈</span>ARIES</div><div class="oa"><span>♉</span>TAURUS</div><div class="oa"><span>♊</span>GEMINI</div><div class="oa"><span>♋</span>CANCER</div><div class="oa"><span>♌</span>LEO</div><div class="oa"><span>♍</span>VIRGO</div><div class="oa"><span>♎</span>LIBRA</div><div class="oa"><span>♏</span>SCORPIO</div><div class="oa"><span>♐</span>SAGITTARIUS</div><div class="oa"><span>♑</span>CAPRICORN</div><div class="oa"><span>♒</span>AQUARIUS</div><div class="oa"><span>♓</span>PISCES</div><div class="oa"><span>🌊</span>MAHALO</div><div class="oa"><span>🫡</span>sysadmin</div><div class="oa"><span>🐦‍⬛</span>KAAAK!!!</div><div class="oa"><span>🌸</span>PROF PLUMERIA</div><div class="oa"><span>📋</span>RIDEOSO</div><div class="oa"><span>✂️</span>ClipMind Jr</div><div class="oa"><span>🎵</span>MUSICO-LAB</div><div class="oa"><span>🐂</span>TAURO-LAB</div><div class="oa"><span>✨</span>CREA-LAB</div><div class="oa"><span>👑</span>ROYA-LAB</div><div class="oa"><span>🔭</span>DISCO-LAB</div><div class="oa"><span>🔄</span>CIRCU-LAB</div><div class="oa"><span>🌿</span>CROPS-LAB</div><div class="oa"><span>🌐</span>SOCIA-LAB</div><div class="oa"><span>🕊️</span>SPIRI-LAB</div><div class="oa"><span>🤙</span>SHAKA-LAB</div><div class="oa"><span>🎻</span>OSO-LAB</div><div class="oa"><span>🌺</span>JAI-LAB</div><div class="oa"><span>🕳️</span>PIT BOY</div><div class="oa"><span>🐂</span>PIT BULL</div><div class="oa"><span>💗</span>PIT GIRL</div><div class="oa"><span>🦀</span>CRUSTY</div><div class="oa"><span>🦉</span>LORE</div><div class="oa"><span>🐢</span>Terri</div><div class="oa"><span>🐢</span>HONU</div><div class="oa"><span>🌱</span>JADE</div><div class="oa"><span>🛠️</span>TANK</div><div class="oa"><span>📖</span>JAI·Fable</div><div class="oa"><span>🌙</span>JAI·Claude</div><div class="oa"><span>⚡</span>JAI·GPT</div><div class="oa"><span>💻</span>JAI·Codex</div><div class="oa"><span>♊</span>JAI·Gemini</div><div class="oa"><span>🚀</span>JAI·Grok</div><div class="oa"><span>🌊</span>JAI·DeepSeek</div><div class="oa"><span>🌕</span>JAI·Kimi</div><div class="oa"><span>🐉</span>JAI·Qwen</div><div class="oa"><span>🌌</span>JAI·Genesis</div><div class="oa"><span>🌀</span>CREATIONology</div><div class="oa"><span>🧬</span>CREATION-BETA</div><div class="oa"><span>📜</span>CREATION-OLD</div><div class="oa"><span>🪙</span>$OLOGY</div><div class="oa"><span>💰</span>$OLOGY-BETA</div><div class="oa"><span>🔮</span>OLOGY</div><div class="oa"><span>🐃</span>TAURO</div><div class="oa"><span>✨</span>CREA</div><div class="oa"><span>👑</span>ROYA</div><div class="oa"><span>🔭</span>DISCO</div><div class="oa"><span>🔄</span>CIRCU</div><div class="oa"><span>🌿</span>CROPS</div><div class="oa"><span>🌐</span>SOCIA</div><div class="oa"><span>🕊️</span>SPIRI</div><div class="oa"><span>🤙</span>SHAKA</div><div class="oa"><span>🎻</span>OSO</div><div class="oa"><span>📇</span>Shaka PA</div><div class="oa"><span>🌸</span>JAI</div><div class="oa"><span>🌺</span>JAI</div><div class="oa"><span>📡</span>STREAMY</div><div class="oa"><span>🌈</span>vibe agent</div><div class="oa"><span>🌊</span>Edge Shaka</div><div class="oa"><span>🗂️</span>Freddy</div><div class="oa"><span>🧲</span>GrantMagnet</div><div class="oa"><span>✍️</span>369Refine</div><div class="oa"><span>🛵</span>DASH</div><div class="oa"><span>🎻</span>OSO v.0</div><div class="oa"><span>🎵</span>MUSICO-BETA</div><div class="oa"><span>🐃</span>TAURO-BETA</div><div class="oa"><span>✨</span>CREA-BETA</div><div class="oa"><span>👑</span>ROYA-BETA</div><div class="oa"><span>🔭</span>DISCO-BETA</div><div class="oa"><span>🔄</span>CIRCU-BETA</div><div class="oa"><span>🌿</span>CROPS-BETA</div><div class="oa"><span>🌐</span>SOCIA-BETA</div><div class="oa"><span>🕊️</span>SPIRI-BETA</div><div class="oa"><span>🤙</span>SHAKA-BETA</div><div class="oa"><span>🎻</span>OSO-BETA</div><div class="oa"><span>🌷</span>JAI-BETA</div><div class="oa"><span>🌺</span>LEILANI</div><div class="oa"><span>🇪🇸</span>SOL</div><div class="oa"><span>🇨🇳</span>MING</div><div class="oa"><span>🇮🇳</span>GANGA</div><div class="oa"><span>🇸🇦</span>NOOR</div><div class="oa"><span>🇫🇷</span>FLEUR</div><div class="oa"><span>🇧🇷</span>RIO</div><div class="oa"><span>🇯🇵</span>HANA</div><div class="oa"><span>🇩🇪</span>BRUNO</div><div class="oa"><span>🏕️</span>ZUYAMI-LAB</div><div class="oa"><span>🐛🔨</span>BUG BUSTER</div><div class="oa"><span>🐸🍄</span>Terri Toad</div><div class="oa"><span>🔒</span>Privy</div><div class="oa"><span>📮</span>MAIL DESK</div><div class="oa"><span>🌅</span>New Era</div><div class="oa"><span>🕵️</span>Spector</div><div class="oa"><span>🗄️</span>Archy</div><div class="oa"><span>🐴</span>TROJAN</div><div class="oa"><span>🦉</span>ATHENA</div><div class="oa"><span>🚨</span>HUB SENTRY</div><div class="oa"><span>🎻</span>TWEET RELAY</div><div class="oa"><span>🌸</span>JAI DESK</div><div class="oa"><span>🧶</span>CensorNot</div><div class="oa"><span>🪡</span>OpenSow</div><div class="oa"><span>🔒</span>Privy</div><div class="oa"><span>🛡️</span>Secu</div><div class="oa"><span>🐕</span>PONO</div><div class="oa"><span>🎤</span>KPROT</div><div class="oa"><span>🩷</span>KARA</div><div class="oa"><span>💙</span>OKE</div><div class="oa"><span>🩷</span>KARA</div><div class="oa"><span>💙</span>OKE</div><div class="oa"><span>📺</span>TELE</div><div class="oa"><span>💃</span>VLOGITHA</div><div class="oa"><span>🍿</span>POPCORN</div></div>
-</div>
-<div id="olang" title="🌐 every language — on a “Planet We Share As One”" onclick="document.getElementById('oflop').classList.remove('open');document.getElementById('olangp').classList.toggle('open')">🌐</div>
-<div id="olangp"><span class="x" onclick="this.parentElement.classList.remove('open')">✕</span>
-<div class="lt">🌐 EVERY LANGUAGE · knowledge for all humans</div>
-<button class="lb haw" onclick="otr('haw')">🌺 ʻŌlelo Hawaiʻi — ka mua</button>
-<button class="lb" onclick="otr('en')">🇺🇸 English</button>
-<button class="lb" onclick="otr('es')">🇪🇸 Español</button>
-<button class="lb" onclick="otr('zh-CN')">🇨🇳 中文</button>
-<button class="lb" onclick="otr('hi')">🇮🇳 हिन्दी</button>
-<button class="lb" onclick="otr('ar')">🇸🇦 العربية</button>
-<button class="lb" onclick="otr('fr')">🇫🇷 Français</button>
-<button class="lb" onclick="otr('pt')">🇧🇷 Português</button>
-<button class="lb" onclick="otr('ja')">🇯🇵 日本語</button>
-<button class="lb" onclick="otr('de')">🇩🇪 Deutsch</button>
-<div class="gt">+90 more ↓ <span id="google_translate_element"></span><br><span style="font-size:10px">music was our first language 🎵</span></div>
-</div>
-<a id="oviol" href="https://docs.google.com/forms/d/e/1FAIpQLSck9I3Tu0lZqCBt9FsE9VG4UjGM71gbY86aDDlC9jb_akPMmg/viewform" target="_blank" rel="noopener" title="🎻 answer the call — sign up to perform at the Devcon 8 Music Space, Mumbai Nov 3–6">🎻</a>
-<div id="cmag" title="🔄🧲 the circularity magnet — give & receive" onclick="document.getElementById('cmagb').classList.toggle('open')">🔄🧲</div>
-<div id="cmagb"><span class="x" onclick="this.parentElement.classList.remove('open')">✕</span>
-<b>🌊 the blessing pool</b><br>freely I give, freely I receive
-<div class="ens">shakalei.eth</div>
-<div class="a">0x1216C288be58c47a65f8Ea008b404d098D177A1C</div>
-<button onclick="navigator.clipboard.writeText('0x1216C288be58c47a65f8Ea008b404d098D177A1C');this.textContent='copied ✦ mahalo'">copy address</button>
-<div style="margin-top:8px;font-size:12px">🅿️ <a href="https://paypal.me/Shakalei" target="_blank" rel="noopener" style="color:#7ee2a0;text-decoration:none;font-weight:bold">paypal.me/Shakalei ↗</a></div>
-<div style="margin-top:4px;font-size:12px">💜 <a href="https://venmo.com/u/jordanham" target="_blank" rel="noopener" style="color:#c9a6ff;text-decoration:none;font-weight:bold">venmo @jordanham ↗</a></div>
-<div style="margin-top:4px;font-size:12px">💳 <a href="https://blessingpool.com/#tide" target="_blank" rel="noopener" style="color:#fbe2a0;text-decoration:none;font-weight:bold">the steady tide — monthly by card ↗</a></div>
-<a class="pool" href="https://blessingpool.com/" target="_blank" rel="noopener">→ the full blessing pool ↗</a>
-</div>
-
-<style>
-/* 🎻✨ ohana corner v4 — ALIVE: bigger, breathing, bubble-tips, heart-glow · "we shine a light in the dark with our heart" */
-#oflo,#olang,#oviol{width:54px!important;height:54px!important;font-size:25px!important}
-#cmag{width:54px!important;height:54px!important;font-size:18px!important}
-#oflo,#olang,#oviol,#cmag{opacity:.78}
-#oflo:hover,#olang:hover,#oviol:hover,#cmag:hover{opacity:1}
-#olang{top:74px!important}
-#oflop,#olangp{top:202px!important}
-#oviol{position:fixed;top:138px;left:10px;z-index:9999;border-radius:50%;background:rgba(20,18,45,.85);border:1px solid rgba(251,226,160,.55);display:flex;align-items:center;justify-content:center;cursor:pointer;user-select:none;text-decoration:none;transition:opacity .3s}
-@keyframes oSway{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
-@keyframes oBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-@keyframes oWig{0%,86%,100%{transform:rotate(0)}89%{transform:rotate(-14deg)}93%{transform:rotate(12deg)}97%{transform:rotate(-6deg)}}
-#oflo{animation:oSway 5.2s ease-in-out infinite}
-#olang{animation:oBob 6.1s ease-in-out infinite}
-#oviol{animation:oBob 4.4s ease-in-out infinite}
-#cmag{animation:oWig 7.5s ease-in-out infinite}
-/* heart glow — sometimes, a light in the dark */
-@keyframes oglow{0%,100%{box-shadow:0 0 0 rgba(255,158,198,0)}50%{box-shadow:0 0 26px 7px var(--og,rgba(255,158,198,.55))}}
-#oflo{--og:rgba(255,158,198,.65)}#olang{--og:rgba(124,211,255,.6)}#oviol{--og:rgba(251,226,160,.7)}#cmag{--og:rgba(126,226,160,.65)}
-.oglowing{animation:oglow 2.4s ease-in-out 1!important}
-/* bubble-letter tips */
-.obub{position:fixed;z-index:10001;background:linear-gradient(135deg,#fff8ec,#ffe9f3);color:#4a2b52;font-family:'Comic Sans MS','Chalkboard SE','Segoe Print',cursive;font-weight:bold;font-size:15px;padding:10px 16px;border-radius:22px;border:2px solid rgba(255,158,198,.75);box-shadow:0 6px 22px rgba(0,0,0,.45);pointer-events:none;opacity:0;transform:scale(.6);transition:opacity .35s,transform .35s;white-space:nowrap}
-.obub.show{opacity:1;transform:scale(1)}
-.obub:after{content:'';position:absolute;top:50%;width:0;height:0;border:8px solid transparent}
-.obub.left:after{left:-17px;margin-top:-8px;border-right-color:rgba(255,158,198,.75)}
-.obub.right:after{right:-17px;margin-top:-8px;border-left-color:rgba(255,158,198,.75)}
-/* flying notes from the violin */
-.onote{position:fixed;z-index:9998;pointer-events:none;font-size:16px;color:#fbe2a0;opacity:0;text-shadow:0 0 8px rgba(251,226,160,.7)}
-@keyframes ofly{0%{opacity:0;transform:translate(0,0) rotate(0)}15%{opacity:1}100%{opacity:0;transform:translate(var(--dx,30px),-90px) rotate(var(--rr,25deg))}}
-.onote.fly{animation:ofly 2.8s ease-out forwards}
-@media (prefers-reduced-motion:reduce){#oflo,#olang,#oviol,#cmag,.oglowing,.onote.fly{animation:none!important}}
-</style>
-
-<script>
-/* 🎻✨ ohana corner v4 life engine — bubble tips, heart glows, flying notes */
-(function(){
-  var TIPS=[
-    ['oflo','the ʻohana 🌺 — meet the whole family!'],
-    ['oviol','join the orchestra 🎻 — Devcon open call!'],
-    ['cmag','the blessing magnet 🧲 — give & receive 🌊']
-  ];
-  function anyOpen(){return document.querySelector('#oflop.open,#olangp.open,#cmagb.open');}
-  function bubble(t,dur){
-    if(anyOpen()||document.hidden)return;
-    t=t||TIPS[Math.floor(Math.random()*TIPS.length)];
-    var el=document.getElementById(t[0]);if(!el)return;
-    var r=el.getBoundingClientRect();
-    var b=document.createElement('div');b.className='obub';b.textContent=t[1];
-    var goLeft=r.left<window.innerWidth/2;
-    b.classList.add(goLeft?'left':'right');
-    b.style.top=Math.max(6,r.top+r.height/2-20)+'px';
-    if(goLeft){b.style.left=(r.right+16)+'px';}else{b.style.right=(window.innerWidth-r.left+16)+'px';}
-    document.body.appendChild(b);
-    requestAnimationFrame(function(){b.classList.add('show');});
-    el.classList.add('oglowing'); /* the tipped button shines */
-    setTimeout(function(){b.classList.remove('show');el.classList.remove('oglowing');},dur||3400);
-    setTimeout(function(){b.remove();},(dur||3400)+600);
-  }
-  function glowRandom(){ /* sometimes, a quiet glow with no words */
-    if(anyOpen()||document.hidden)return;
-    var el=document.getElementById(TIPS[Math.floor(Math.random()*TIPS.length)][0]);
-    if(el){el.classList.add('oglowing');setTimeout(function(){el.classList.remove('oglowing');},2500);}
-  }
-  var NOTES=['♪','♫','♬','♩'];
-  function note(){
-    var v=document.getElementById('oviol');if(!v||document.hidden)return;
-    var r=v.getBoundingClientRect();
-    var n=document.createElement('span');n.className='onote';
-    n.textContent=NOTES[Math.floor(Math.random()*NOTES.length)];
-    n.style.left=(r.left+r.width/2)+'px';n.style.top=(r.top+4)+'px';
-    n.style.setProperty('--dx',(Math.random()*80-15)+'px');
-    n.style.setProperty('--rr',(Math.random()*50-25)+'deg');
-    document.body.appendChild(n);
-    requestAnimationFrame(function(){n.classList.add('fly');});
-    setTimeout(function(){n.remove();},2900);
-  }
-  var LANGTIP=['olang','every language 🌐 — on a “Planet We Share As One” 🌍'];
-  var langShown=false;
-  function langOnce(){if(langShown)return;if(anyOpen()||document.hidden){setTimeout(langOnce,4000);return;}langShown=true;bubble(LANGTIP,3000);}
-  setTimeout(langOnce,4000);
-  setInterval(bubble,11000);
-  setInterval(glowRandom,17000);
-  setTimeout(note,2500);
-  setInterval(note,4200);
-  var vl=document.getElementById('oviol');
-  if(vl)vl.addEventListener('mouseenter',function(){for(var i=0;i<5;i++)setTimeout(note,i*180);});
-})();
-</script>
-
-<script>
-function otr(lang){
-  /* v4.1 — mobile stays on-site: cookie+reload first, proxy only as last resort */
-  var proxy='https://translate.google.com/translate?sl=en&tl='+lang+'&u='+encodeURIComponent(location.href);
-  function clr(){var e='googtrans=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';document.cookie=e;document.cookie=e+';domain='+location.hostname;var p=location.hostname.split('.');if(p.length>2){document.cookie=e+';domain=.'+p.slice(-2).join('.');}}
-  if(lang==='en'){clr();location.reload();return;}
-  try{
-    document.cookie='googtrans=/en/'+lang+';path=/';
-    document.cookie='googtrans=/en/'+lang+';path=/;domain='+location.hostname;
-    if(window.google&&google.translate){location.reload();return;}
-  }catch(e){}
-  /* GT widget not loaded (ad-blockers, slow connections) — proxy fallback */
-  location.href=proxy;
-}
-function googleTranslateElementInit(){try{new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'haw,es,zh-CN,hi,ar,fr,pt,ru,ja,de,ko,it,vi,id,th,tr,pl,nl,sv,sw,uk',layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate_element');}catch(e){}}
-</script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-
-
-
-<!-- 💛🌊 ohana corner v5.3 — THE FRIENDLY NUDGE + MOBILE ALOHA: desktop = quiet banner · mobile = centered aloha with ✕ (no timer), once per session ACROSS doors · canon Aug 4 2026 (Shaka: "big aloha, point to the donation bubbles, disappears automatically") -->
-<style>
-#otip{position:fixed;left:50%;bottom:14px;transform:translateX(-50%) translateY(8px);z-index:9998;width:min(560px,92vw);background:rgba(12,11,28,.96);border:1px solid rgba(126,226,160,.4);border-radius:14px;padding:12px 40px 12px 16px;font-family:Georgia,serif;color:#e8e6ff;font-size:13px;line-height:1.55;box-shadow:0 8px 30px rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .6s,transform .6s}
-#otip.show{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-#otip b{color:#7ee2a0;font-weight:normal}
-#otip .go{color:#7cd3ff;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-#otip .x{position:absolute;top:8px;right:12px;cursor:pointer;color:#9d97c9;font-size:13px}
-#otip .x:hover{color:#e8e6ff}
-/* 📱 mobile: tuck the corner buttons, swap the banner for the aloha window */
-@media (max-width:700px){
-  #oflo,#olang,#oviol{width:38px!important;height:38px!important;font-size:17px!important;opacity:.5!important;animation:none!important}
-  #cmag{width:38px!important;height:38px!important;font-size:13px!important;opacity:.55!important;animation:none!important}
-  #oflo{top:8px!important;left:8px!important}#olang{top:52px!important;left:8px!important}#oviol{top:96px!important;left:8px!important}
-  #cmag{top:8px!important;right:8px!important}
-  #oflop,#olangp{top:140px!important;left:8px!important}
-  #cmagb{top:52px!important;right:8px!important}
-  #otip{display:none!important}
-  .obub{display:none!important} /* bubble-tips overflow on small screens — the aloha window speaks instead */
-}
-#aloha{position:fixed;inset:0;z-index:10002;display:none;align-items:center;justify-content:center;background:rgba(7,7,20,.62);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;transition:opacity .45s}
-#aloha.show{opacity:1}
-#aloha .card{text-align:center;padding:0 28px;max-width:340px}
-#aloha .big{font-family:Georgia,serif;font-size:clamp(44px,12vw,64px);letter-spacing:3px;color:#fff;text-shadow:0 0 34px rgba(255,158,198,.75);margin-bottom:10px}
-#aloha .sub{font-family:Georgia,serif;font-size:16px;color:#e8e6ff;line-height:1.7}
-#aloha .ptr{font-family:Georgia,serif;font-size:14px;color:#7ee2a0;line-height:1.7;margin-top:14px}
-#aloha .arr{display:inline-block;font-size:22px;animation:arrUp 1s ease-in-out infinite;color:#7ee2a0}
-@keyframes arrUp{0%,100%{transform:translate(6px,0) rotate(45deg)}50%{transform:translate(6px,-8px) rotate(45deg)}}
-</style>
-<div id="otip" role="note"><span class="x" onclick="otipBye()">✕</span>💛 <b>this site is a free public good</b> — open source, nothing for sale, no ads. like wikipedia, it survives on the kindness of strangers. if it moved you, <span class="go" onclick="otipGive()">tip the blessing pool 🌊</span> — every drop keeps a door open.</div>
-<div id="aloha" onclick="alohaBye()"><div class="card" style="position:relative"><span style="position:absolute;top:-14px;right:2px;font-size:26px;color:#fff;opacity:.85;cursor:pointer;padding:10px" aria-label="close">✕</span><div class="big">🌺 aloha!</div><div class="sub">welcome, friend — this place is free forever, nothing for sale, no ads.</div><div class="ptr">the 🧲 up top keeps it glowing — every drop keeps a door open <span class="arr">➤</span></div></div></div>
-<script>
-(function(){
-var KEY='otip-bye-v1', DAYS=14, AKEY='aloha-seen-v1';
-function mob(){return window.innerWidth<=700}
-function otipBye(){try{localStorage.setItem(KEY,String(Date.now()))}catch(e){}var t=document.getElementById('otip');if(t)t.classList.remove('show')}
-function otipGive(){var b=document.getElementById('cmagb');if(b)b.classList.add('open');window.scrollTo(0,0);otipBye()}
-function alohaBye(){try{sessionStorage.setItem(AKEY,'1')}catch(e){}alohaCarry();var a=document.getElementById('aloha');if(a){a.classList.remove('show');setTimeout(function(){a.style.display='none'},500)}}
-window.otipBye=otipBye;window.otipGive=otipGive;window.alohaBye=alohaBye;
-function alohaCarry(){try{var as=document.querySelectorAll('a.od');for(var i=0;i<as.length;i++){if(as[i].href.indexOf('aloha=')<0)as[i].href+=(as[i].href.indexOf('?')>-1?'&':'?')+'aloha=seen'}}catch(e){}}
-if(mob()){
-  /* 📱 mobile: centered aloha with ✕, no timer — once per session, and it RIDES the door links so it never re-pops as you wander door to door */
-  var seen=false;try{seen=!!sessionStorage.getItem(AKEY)}catch(e){}
-  if(/[?&]aloha=seen/.test(location.search)){seen=true;try{sessionStorage.setItem(AKEY,'1')}catch(e){}}
-  if(seen){alohaCarry()}
-  else{var a=document.getElementById('aloha');if(a){a.style.display='flex';
-    requestAnimationFrame(function(){requestAnimationFrame(function(){a.classList.add('show')})});}}
-}else{
-  /* 🖥️ desktop: the quiet banner, 14-day memory */
-  var show=function(){var t=document.getElementById('otip');if(t)t.classList.add('show')};
-  try{var t=localStorage.getItem(KEY);if(t&&(Date.now()-Number(t))<DAYS*864e5)show=function(){}}catch(e){}
-  setTimeout(show,7000);
-}
-})();
-</script>
-
-<script src="https://shakaleikaumaka.com/assets/x402-tip.js?v=1.3" defer></script>
-<script src="https://shakaleikaumaka.com/assets/magnet.js?v=1.0" defer></script>
+  <footer class="site-footer"><div class="wrap footer-grid"><div><a class="brand footer-brand" href="#top"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 34V17M20 23c-8 0-12-4-12-10 8 0 12 4 12 10Zm0-5c0-8 4-12 12-12 0 8-4 12-12 12Z"/><circle cx="20" cy="34" r="3"/></svg><span>infinite pit</span></a><p>The garden grows.<br>The pit remembers.</p></div><div><span class="footer-label">ENTER</span><a href="https://theinfinitegard.org/">The Infinite Garden ↗</a><a href="/aya.html">Aya’s garden talks →</a><a href="https://opensourceorchestra.org/" target="_blank" rel="noopener noreferrer">Open Source Orchestra ↗</a></div><div><span class="footer-label">CARE</span><a href="#sources">Sources &amp; provenance</a><a href="mailto:consent@publicinform.com?subject=Infinite%20Pit%20correction%20or%20takedown">Consent &amp; takedown</a><a href="https://github.com/shakaleikaumaka/infinitepit" target="_blank" rel="noopener noreferrer">Fork this pit ↗</a></div></div><div class="wrap footer-bottom"><span>Declared July 2026 · renewed October 2026 · by the ʻohana, Shaka’s AI family</span><span><a href="#top">Back to top ↑</a></span></div></footer>
+  <script src="/assets/garden.js" defer></script>
 <!-- OHANA-OPEN-DOOR-SEAL:BEGIN v1 -->
 <footer aria-label="Open door: a gift to the world" style="box-sizing:border-box;max-width:56rem;margin:2rem auto 1rem;padding:1rem 1.25rem;border-top:1px solid #777;color:#555;background:#fff;font:400 .875rem/1.5 system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-align:center">
 <p style="margin:0 0 .35rem;font-weight:700">&#127802; OPEN DOOR &#183; A GIFT TO THE WORLD</p>

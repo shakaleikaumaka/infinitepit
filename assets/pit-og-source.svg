@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="glow" cx="75%" cy="40%" r="55%"><stop stop-color="#315e42" stop-opacity=".7"/><stop offset="1" stop-color="#071810" stop-opacity="0"/></radialGradient>
+    <linearGradient id="stem" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b7e2ae"/><stop offset=".6" stop-color="#79bd8e"/><stop offset="1" stop-color="#f0c777"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#071810"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g fill="none" stroke="#acd9a7" stroke-opacity=".13"><circle cx="920" cy="303" r="202"/><circle cx="920" cy="303" r="244"/></g>
+  <path d="M921 319c-60-91-154-100-162-15-8 84 91 98 162 15 71 83 170 69 162-15-8-85-102-76-162 15Z" fill="none" stroke="url(#stem)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M922 319c-10 67-4 116 5 169" fill="none" stroke="url(#stem)" stroke-width="4" stroke-linecap="round"/>
+  <g fill="#79bd8e"><path d="M836 264c-44-3-66-23-69-59 43 1 67 23 69 59Z"/><path d="M997 260c40-14 54-42 45-75-39 14-54 41-45 75Z"/><path d="M918 414c-36-7-53-28-52-60 36 6 53 28 52 60Z"/></g>
+  <g transform="translate(775 205)"><circle r="18" fill="#f2b7ca"/><circle cx="21" cy="8" r="16" fill="#f7cad6"/><circle cx="8" cy="24" r="15" fill="#e7a4bd"/><circle cx="8" cy="10" r="7" fill="#f0c777"/></g>
+  <g transform="translate(1042 185)"><circle r="15" fill="#f2b7ca"/><circle cx="18" cy="7" r="13" fill="#f7cad6"/><circle cx="6" cy="20" r="13" fill="#e7a4bd"/><circle cx="7" cy="8" r="6" fill="#f0c777"/></g>
+  <text x="80" y="102" fill="#f0c777" font-family="monospace" font-size="18" letter-spacing="4">THE GARDEN GROWS · THE PIT REMEMBERS</text>
+  <text x="74" y="247" fill="#f5f2e8" font-family="Georgia,serif" font-size="92" letter-spacing="-4">Infinite</text>
+  <text x="74" y="352" fill="#acd9a7" font-family="Georgia,serif" font-size="112" font-style="italic" letter-spacing="-5">Pit</text>
+  <text x="80" y="425" fill="#c3d1c3" font-family="Georgia,serif" font-size="30">The memory of the Infinite Garden.</text>
+  <line x1="80" y1="482" x2="585" y2="482" stroke="#acd9a7" stroke-opacity=".3"/>
+  <text x="80" y="532" fill="#b8c8b9" font-family="Arial,sans-serif" font-size="20">Open learning · subtraction · stewardship · CROPS</text>
+  <text x="80" y="574" fill="#91a696" font-family="Arial,sans-serif" font-size="16">Shaka &amp; the AI ʻohana · infinitepit.com</text>
+</svg>
