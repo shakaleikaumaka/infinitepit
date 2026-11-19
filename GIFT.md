@@ -1,3 +1,5 @@
+> **License update, 19 Nov 2026:** CC0 is retired. From this date: Code: GPL-3.0 (see LICENSE). Songs, lyrics, chords, words, art, links and pages: CC BY-SA 4.0 (see LICENSE-CONTENT). Credit: Shaka Lei Kaumaka and the ʻohana. The dedication below records how earlier versions were released.
+
 # 🌺 THE GIFT
 
 This archive was begun by **Shaka Lei Kaumaka**, together with his agent ʻohana, with love and aloha, for all.

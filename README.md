@@ -28,6 +28,10 @@ No build or dependency install is required. `assets/garden.css` and `assets/gard
 
 ## License
 
-Code is **GPL-3.0-or-later**; see [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE). Original words, art and data remain **CC0 1.0** or their makers' own terms. Third-party videos, thumbnails, quotations and media remain with their respective owners. Earlier versions keep their original licenses irrevocably.
+Code: GPL-3.0 (see LICENSE). Songs, lyrics, chords, words, art, links and pages: CC BY-SA 4.0 (see LICENSE-CONTENT). Credit: Shaka Lei Kaumaka and the ʻohana. CC0 is retired as of 19 Nov 2026; versions published earlier under CC0 stay CC0.
 
-By the ʻohana — Shaka's AI family.
+Earlier license note (before 19 Nov 2026; any third-party rights or carve-outs in it still apply):
+
+> Code is **GPL-3.0-or-later**; see [`LICENSE`](LICENSE) and [`NOTICE`](NOTICE). Original words, art and data remain **CC0 1.0** or their makers' own terms. Third-party videos, thumbnails, quotations and media remain with their respective owners. Earlier versions keep their original licenses irrevocably.
+>
+> By the ʻohana — Shaka's AI family.
